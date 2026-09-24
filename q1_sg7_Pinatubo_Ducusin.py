@@ -3,16 +3,18 @@ class Glassware:
         self.material = material
 
 class Beaker(Glassware):
-    def __init__(self, capacity_ml=250, material="Glass"):
-        super().__init__(material)
-        self.capacity_ml = capacity_ml
+    def __init__(self, material="Glass"):
+        self.material = material
 
 class Tray:
-    def __init__(self, num_beakers=5):
-        self.beakers = [Beaker() for _ in range(num_beakers)]
+    def __init__(self):
+        self.beakers = []
+        for i in range(5):
+            self.beakers.append(Beaker())
 
 if __name__ == "__main__":
     tray = Tray()
     print(f"Tray created with {len(tray.beakers)} beakers.")
     
-    del tray
+my_tray = Tray()   
+del tray
